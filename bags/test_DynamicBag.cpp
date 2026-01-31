@@ -14,3 +14,4 @@ TEST_CASE("Calling all public members", "[DynamicBag]"){
   REQUIRE(b.getFrequencyOf(5) == 0);
   REQUIRE(b.contains(5) == false);
 }
+  

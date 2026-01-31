@@ -4,7 +4,7 @@
 template<typename T>
 DynamicBag<T>::DynamicBag() {
 currentSize = 0;
-  capacity = 0;  // Start with capacity of 10
+  capacity = 10; 
   bagContainer = new T[capacity];
 
 }
@@ -29,11 +29,18 @@ DynamicBag<T>::~DynamicBag(){
 template<typename T>
 DynamicBag<T>& DynamicBag<T>::operator=(DynamicBag<T> x)
 {  
+
+    swap(x);
   return *this;
 }
 
 template<typename T>
-void DynamicBag<T>::swap(DynamicBag<T>& x){}
+void DynamicBag<T>::swap(DynamicBag<T>& x){
+
+  std::swap(bagContainer, x.bagContainer);
+  std::swap(currentSize, x.currentSize);
+  std::swap(capacity, x.capacity);
+}
 
 template<typename T>
 bool DynamicBag<T>::add(const T& item)
