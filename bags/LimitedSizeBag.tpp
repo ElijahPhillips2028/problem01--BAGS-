@@ -9,7 +9,6 @@ T bagContainer[0];
 template<typename T>
 bool LimitedSizeBag<T>::add(const T& item)
 {
-    int i;
   //check if the bag is not over 100
   if (currentSize >= maxsize){
       return false;

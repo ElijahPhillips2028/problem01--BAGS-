@@ -6,12 +6,11 @@
 
 TEST_CASE("Calling all public members", "[DynamicBag]"){
   DynamicBag<int> b;
-
-  b.add(0);
-  b.remove(0);
-  b.isEmpty();
-  b.getCurrentSize();
+  REQUIRE(b.add(5) == true);
+  REQUIRE(b.remove(5) == true);
+  REQUIRE(b.isEmpty() == true);
+  REQUIRE(b.getCurrentSize() == 0);
   b.clear();
-  b.getFrequencyOf(0);
-  b.contains(0);
+  REQUIRE(b.getFrequencyOf(5) == 0);
+  REQUIRE(b.contains(5) == false);
 }

@@ -37,7 +37,9 @@ public:
   bool contains(const T& item) const;
 
 private:
-
+T* bagContainer;
+std::size_t currentSize;
+std::size_t capacity;
 };
 
 #include "DynamicBag.tpp"
